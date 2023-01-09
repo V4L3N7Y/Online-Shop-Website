@@ -37,7 +37,7 @@ function Product({id,title,price,description,category,image}) {
           </div>
         {hasPrime && (
             <div className='flex items-center space-x-2 mt-5 mb-5'>
-                <img width='100' src="https://i.ibb.co/cQzjFmk/Untitled-2.png" alt="" />
+                 <img width='100' src="https://i.ibb.co/cQzjFmk/Untitled-2.png" alt="" />
                 <p className='text-xs text-gray-500'>FREE Next-day Delivery</p>
             </div>
         )}
