@@ -7,9 +7,8 @@ export default function Home({products}) {
   return (
     <div className="bg-gray-100">
       <Head>
-        <title>Amazon</title>
+        <title>oNLINEsHOP</title>
       </Head>
-
          <Header/>
 
       <main className='max-w-screen-2xl mx-auto'>
