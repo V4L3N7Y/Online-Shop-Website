@@ -28,10 +28,8 @@ function CheckoutProduct({
       image,
       hasPrime
     };
-
     // Push
     dispatch(addToBasket(product));
-
   };
 
   const removeItemFromBasket = () => {
@@ -57,10 +55,12 @@ function CheckoutProduct({
            <img loading='lazy' width='100' src="https://i.ibb.co/cQzjFmk/Untitled-2.png" alt="" />
           <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
         </div>
-        )}
-      </div>
-      <button onClick={addItemToBasket} className='button'>Add to Basket</button>
-      <button onClick={removeItemFromBasket} className='button'>Remove from Basket</button>
+         )}
+        </div>
+      <div className='flex flex-col space-y-2 my-auto justify-self-end'>
+        <button onClick={addItemToBasket} className='button'>Add to Basket</button>
+        <button onClick={removeItemFromBasket} className='button'>Remove from Basket</button>
+      </div>  
 
     </div>
   

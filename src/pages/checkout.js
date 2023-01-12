@@ -55,7 +55,7 @@ function Checkout() {
         <div className="flex flex-col bg-white p-10 shadow-md">
           {items.length > 0 && (
             <>
-            <h2>Subtotal ({items.length } items):
+            <h2>Subtotal ({items.length} items):
 
             <span className='font-bold'>
               <p>{total} EUR</p>
