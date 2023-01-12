@@ -3,13 +3,7 @@
 module.exports = {
     images: {
         domains: [ 'i.ibb.co', 'fakestoreapi.com']
-    },
-    experimental: {
+     },experimental: {
         appDir: true,
-      }
+     },   
 };
-
-
-//ignore this//
-
-

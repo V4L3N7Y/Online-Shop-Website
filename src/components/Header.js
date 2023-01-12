@@ -1,21 +1,37 @@
 import React from 'react';
 import Image from 'next/image';
-import {MenuIcon, 
-        SearchIcon,
-        ShoppingCartIcon} from '@heroicons/react/outline';
-import {signIn, signOut, useSession} from "next-auth/client";
+import { MenuIcon, 
+         SearchIcon,
+         ShoppingCartIcon } from '@heroicons/react/outline';
+
+import { useSession, 
+         signIn, 
+         signOut } from "next-auth/react";
+
+import { useRouter } from 'next/router'; 
+import { useSelector } from 'react-redux';
+import { selectItems } from '../slices/basketSlice';        
+
 
 function Header() {
+
+  //  const {session} = useSession();
+  const { data: session } = useSession()
+  const router = useRouter();
+  const items = useSelector(selectItems)
+   
+
   return (
     <header>
         {/*Top nav */}
       <div className='flex items-center bg-shop_blue p-1 flex-grow py-2'>
         <div className='mt-2 p-2 flex items-center flex-grow sm:flex-grow-0'>
             <Image
+            onClick={() => router.push('/')}
               src='https://i.ibb.co/Pzq83XQ/Untitled-1.png'
               height={40}
               width={150}
-              objectFit='contain'
+              alt='logo'
               className='cursor-pointer'
             />
         </div>
@@ -28,10 +44,9 @@ function Header() {
            
 
        {/* Right */}
-
         <div className='text-white text-center flex items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
-          <div onClick={signIn} className='cursor-pointer link'>
-            <p>Hello Nastase Valentin</p>
+          <div onClick={ !session ? signIn : signOut } className='cursor-pointer link'>
+            <p>{session ? `Hello, ${session.user.name}` : 'Sign In'}</p>
              <p className='font-extrabold md:text-sm'>Account & Lists</p>
           </div>
 
@@ -40,9 +55,11 @@ function Header() {
               <p className='font-extrabold md:text-sm'>& Orders</p>
           </div>
 
-          <div className='cursor-pointer relative link flex items-center'>
+          <div onClick={() => router.push('/checkout')} className='cursor-pointer relative link flex items-center'>
             
-            <span className='absolute top-0 right-0 md:right-10 h-4 w-4 bg-gray-100 text-center rounded-full text-black bolt'>0</span>
+            <span className='absolute top-0 right-0 md:right-10 h-4 w-4 bg-gray-100 text-center rounded-full text-black bolt'>
+              {items.length}
+            </span>
 
              <ShoppingCartIcon className="h-10" />
               <p className='hidden md:inline font-extrabold md:text-sm mt-4'>Basket</p>
