@@ -5,5 +5,5 @@ module.exports = {
         domains: [ 'i.ibb.co', 'fakestoreapi.com']
      },experimental: {
         appDir: true,
-     },target: 'serverless'  
+     },
 };
