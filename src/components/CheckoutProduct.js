@@ -36,7 +36,7 @@ function CheckoutProduct({
     dispatch(removeFromBasket({id}));
   }
 
-  return <div className="bg-gray-100 grid grid-cols-5">
+  return <div className="bg-white grid grid-cols-5">
           <Image src={image} width={200} height={200} />
 
          {/* Middle */}
