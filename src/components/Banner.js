@@ -18,15 +18,15 @@ function Banner() {
        >
 
                 <div>
-                    <img loading="lazy" src="https://c8.alamy.com/comp/G2X952/summer-sale-banner-1500x600-pixel-vector-illustration-G2X952.jpg" />    
+                    <img loading="lazy" src="https://repository-images.githubusercontent.com/380267876/0afad8b4-fe0b-4b19-89d1-98ac583bcb62" />    
                 </div>
 
                 <div>
-                    <img loading="lazy" src="https://c8.alamy.com/comp/G21YMD/cheap-flight-to-europe-1500x600-banner-vector-illustration-G21YMD.jpg" />     
+                    <img loading="lazy" src="https://nextjs.org/static/blog/next-12/twitter-card.png" />     
                 </div>
 
                 <div>
-                    <img loading="lazy" src="https://c8.alamy.com/comp/G21YME/30-days-free-trial-1500x600-banner-vector-illustration-G21YME.jpg" />
+                    <img loading="lazy" src="https://blog.haposoft.com/content/images/2022/10/Testing.png" />
                 </div>
 
       </Carousel>

@@ -24,7 +24,8 @@
     "react-dom": "^18.2.0",
     "react-redux": "7.2.2",
     "react-responsive-carousel": "^3.2.23",
-    "stripe": "^11.6.0"
+    "stripe": "^11.6.0",
+    "styled-components": "^5.3.6"
   },
   "license": "MIT",
   "devDependencies": {
