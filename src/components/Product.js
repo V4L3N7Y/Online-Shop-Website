@@ -4,6 +4,9 @@ import { StarIcon } from '@heroicons/react/solid';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToBasket } from "../slices/basketSlice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import styled from 'styled-components';
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
@@ -34,15 +37,27 @@ function Product({id,title,price,description,category,image}) {
         hasPrime,
        };
        
-       // Sending the product as an action to the REDUX store
+       // Sending the product as an action to the REDUX store //
        dispatch(addToBasket(product))
 
     };
-    const handleClick = () => {
-      confirm("Added to Bascket!");
-    };
 
-    const handleClicks = [addItemToBasket, handleClick];
+    // pop up notification when you press the "Add to basket" button with a duration of 3 sec //
+    
+  const [showNotification, setShowNotification] = useState(false);
+
+  const handleButtonClick = () => {
+    toast('Added to basket', {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+  };
+
+    const handleClicks = [addItemToBasket, handleButtonClick];
 
    
 
@@ -79,6 +94,8 @@ function Product({id,title,price,description,category,image}) {
         )}
 
         <button onClick={() => handleClicks.forEach(fn => fn())} className='mt-auto button'>Add to Basket</button>
+        <ToastContainer toastStyle = {{ backgroundColor: "rgb(241 245 249)", color: "rgb(23 23 23)", borderLeft: "8px solid #0092ff"}}/>
+        
 
     </div>
   )
